@@ -26,7 +26,8 @@
     
     self.wallet = [[TSOWallet alloc] initWithAmount:1 currency:@"USD"];
     [self.wallet plus:[TSOMoney euroWithAmount:1]];
-    self.walletVC = [[TSOWalletTableViewController alloc] initWithModel:self.wallet];
+    [self.wallet plus:[TSOMoney dollarWithAmount:5]];
+    self.walletVC = [[TSOWalletTableViewController alloc] initWithModel:self.wallet broker:nil];
 }
 
 - (void)tearDown {
@@ -46,16 +47,18 @@
     }];
 }
 
--(void) testThatTableHasOneSection{
+-(void) testThatTableHasNumberOfCurrenciesSectionsPlusOne{
     
     NSUInteger sections = [self.walletVC numberOfSectionsInTableView:nil];
-    XCTAssertEqual(sections, 1, @"There can only be one!");
+    XCTAssertEqual(sections, 3);
     
 }
 
 -(void) testThatNumberOfCellsIsNumberOfMoneyPlusOne{
     
-    XCTAssertEqual(self.wallet.count + 1, [self.walletVC tableView:nil numberOfRowsInSection:0], @"Number of cells is the number of moneys plus 1 (the total)");
+    XCTAssertEqual(3, [self.walletVC tableView:nil numberOfRowsInSection:0], @"Number of cells is the number of moneys plus 1 (the total)");
+    
+    XCTAssertEqual(2, [self.walletVC tableView:nil numberOfRowsInSection:1], @"Number of cells is the number of moneys plus 1 (the total)");
     
 }
 

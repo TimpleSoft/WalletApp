@@ -7,6 +7,7 @@
 //
 
 @import Foundation;
+@import UIKit;
 #import "TSOMoney.h"
 
 
@@ -17,5 +18,11 @@
 -(void) subscribeToMemoryWarning:(NSNotificationCenter *) nc;
 
 -(NSUInteger) countOfDifferentCurrencies;
+
+-(NSUInteger) countForSection:(NSUInteger) section;
+-(NSUInteger) amountForSection:(NSUInteger) section;
+
+-(TSOMoney *) moneyAtIndexPath:(NSIndexPath *) indexPath;
+
 
 @end

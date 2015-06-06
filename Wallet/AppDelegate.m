@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "TSOWalletTableViewController.h"
+#import "TSOWallet.h"
+#import "TSOMoney.h"
+#import "TSOBroker.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +21,28 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
+    // Creamos la cartera
+    TSOWallet *wallet = [[TSOWallet alloc] initWithAmount:5 currency:@"EUR"];
+    [wallet plus:[TSOMoney dollarWithAmount:10]];
+    [wallet plus:[TSOMoney euroWithAmount:10]];
+    
+    [wallet plus:[[TSOMoney alloc] initWithAmount:20 currency:@"GBP"]];
+    [wallet plus:[[TSOMoney alloc] initWithAmount:10 currency:@"GBP"]];
+    [wallet plus:[[TSOMoney alloc] initWithAmount:10 currency:@"GBP"]];
+    
+    // Creamos el broker
+    TSOBroker *broker = [TSOBroker new];
+    [broker addRate:2 fromCurrency:@"EUR" toCurrency:@"USD"];
+    [broker addRate:5 fromCurrency:@"EUR" toCurrency:@"GBP"];
+    
+    
+    
+    TSOWalletTableViewController *walletVC = [[TSOWalletTableViewController alloc] initWithModel:wallet broker:broker];
+    
+    self.window.rootViewController = walletVC;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

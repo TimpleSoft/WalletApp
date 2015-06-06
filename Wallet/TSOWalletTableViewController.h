@@ -6,11 +6,13 @@
 //  Copyright (c) 2015 TimpleSoft. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 @class TSOWallet;
+@class TSOBroker;
 
 @interface TSOWalletTableViewController : UITableViewController
 
--(id) initWithModel:(TSOWallet *) model;
+-(id) initWithModel:(TSOWallet *) model
+             broker:(TSOBroker *) broker;
 
 @end

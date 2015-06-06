@@ -14,6 +14,8 @@
 
 @interface TSOWalletTest : XCTestCase
 
+@property (strong, nonatomic) TSOWallet *wallet;
+
 @end
 
 @implementation TSOWalletTest
@@ -21,6 +23,7 @@
 - (void)setUp {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    self.wallet = [[TSOWallet alloc] initWithAmount:10 currency:@"EUR"];
 }
 
 - (void)tearDown {
@@ -46,16 +49,49 @@
 
 -(void) testNumberOfDifferentCurrencies{
     
-    TSOWallet *wallet = [[TSOWallet alloc] initWithAmount:10 currency:@"EUR"];
+    XCTAssertEqual([self.wallet countOfDifferentCurrencies], 1);
     
-    XCTAssertEqual([wallet countOfDifferentCurrencies], 1);
+    [self.wallet plus:[TSOMoney dollarWithAmount:20]];
+    [self.wallet plus:[TSOMoney dollarWithAmount:20]];
     
-    [wallet plus:[TSOMoney dollarWithAmount:20]];
-    [wallet plus:[TSOMoney dollarWithAmount:20]];
-    
-    XCTAssertEqual([wallet countOfDifferentCurrencies], 2);
+    XCTAssertEqual([self.wallet countOfDifferentCurrencies], 2);
     
 }
 
+-(void) testNumberOfMoneysForCurrency{
+    
+    [self.wallet plus:[TSOMoney dollarWithAmount:20]];
+    [self.wallet plus:[TSOMoney dollarWithAmount:20]];
+    
+    XCTAssertEqual([self.wallet countForSection:0], 1);
+    XCTAssertEqual([self.wallet countForSection:1], 2);
+    
+}
+
+
+-(void) testMoneyAtIndexPath{
+    
+    [self.wallet plus:[TSOMoney dollarWithAmount:30]];
+    [self.wallet plus:[TSOMoney dollarWithAmount:20]];
+    
+    TSOMoney *dollars = [TSOMoney dollarWithAmount:20];
+    TSOMoney *euros = [TSOMoney euroWithAmount:10];
+    
+    XCTAssertEqualObjects(dollars, [self.wallet moneyAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:1]]);
+    XCTAssertEqualObjects(euros, [self.wallet moneyAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]]);
+    
+}
+
+
+-(void) testTotalAmountForSection{
+    
+    [self.wallet plus:[TSOMoney dollarWithAmount:30]];
+    [self.wallet plus:[TSOMoney euroWithAmount:30]];
+    [self.wallet plus:[TSOMoney dollarWithAmount:20]];
+    
+    XCTAssertEqual(40, [self.wallet amountForSection:0]);
+    XCTAssertEqual(50, [self.wallet amountForSection:1]);
+    
+}
 
 @end

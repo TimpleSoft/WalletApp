@@ -11,6 +11,7 @@
 @interface TSOWallet ()
 
 @property (nonatomic, strong) NSMutableDictionary *dictMoneys;
+@property (nonatomic) NSUInteger currencyIndex;
 
 @end
 
@@ -104,13 +105,76 @@
     
 }
 
+// Devuelve el número de moneys de una divisa concreta dependiendo de cómo estén ordenados
+// Es un poco chapuza pero funciona
+-(NSUInteger) countForSection:(NSUInteger) section{
+    
+    NSUInteger __block count = 0;
+    NSUInteger __block result;
+    [self.dictMoneys enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        
+        if (count == section) {
+            result = [obj count];
+            *stop = YES;
+        }
+        count += 1;
+        
+    }];
+    
+    return result;
+    
+}
+
+-(NSUInteger) amountForSection:(NSUInteger) section{
+    
+    NSUInteger __block count = 0;
+    NSUInteger __block result = 0;
+    [self.dictMoneys enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        
+        if (count == section) {
+            
+            // recorremos el array de moneys y vamos sumando las cantidades
+            for (TSOMoney *each in obj) {
+                result += [each.amount integerValue];
+            }
+            
+            *stop = YES;
+            
+        }
+        count += 1;
+        
+    }];
+    
+    return result;
+}
+
+
+-(TSOMoney *) moneyAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSUInteger __block count = 0;
+    TSOMoney __block *result;
+    
+    [self.dictMoneys enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        
+        if (count == indexPath.section) {
+            result = [obj objectAtIndex:indexPath.row];
+            *stop = YES;
+        }
+        count += 1;
+        
+    }];
+    
+    return result;
+    
+}
+
 
 #pragma mark - Notifications
 -(void) subscribeToMemoryWarning:(NSNotificationCenter *) nc{
     
     [nc addObserver:self
            selector:@selector(dumpToDisk:)
-               name:@"UIApplicationDidReceiveMemoryWarningNotification"
+               name:UIApplicationDidReceiveMemoryWarningNotification
              object:nil];
     
 }
