@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E0FBA0D1B2220D800330EED /* TSONetworkTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E0FBA0C1B2220D800330EED /* TSONetworkTest.m */; };
 		8E1CBA5C1B1CF3C0001052F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1CBA5B1B1CF3C0001052F2 /* main.m */; };
 		8E1CBA5F1B1CF3C0001052F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1CBA5E1B1CF3C0001052F2 /* AppDelegate.m */; };
 		8E1CBA621B1CF3C0001052F2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1CBA611B1CF3C0001052F2 /* ViewController.m */; };
@@ -16,6 +17,17 @@
 		8E1CBA8E1B1D06E1001052F2 /* TSOMoney.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1CBA8D1B1D06E1001052F2 /* TSOMoney.m */; };
 		8E1CBA8F1B1D06E1001052F2 /* TSOMoney.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1CBA8D1B1D06E1001052F2 /* TSOMoney.m */; };
 		8E1CBA961B1D0B22001052F2 /* TSOMoneyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1CBA951B1D0B22001052F2 /* TSOMoneyTest.m */; };
+		8EB281301B205F76001F2FEF /* TSOBrokerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB2812F1B205F76001F2FEF /* TSOBrokerTest.m */; };
+		8EB281331B20607D001F2FEF /* TSOBroker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB281321B20607D001F2FEF /* TSOBroker.m */; };
+		8EB281341B20607D001F2FEF /* TSOBroker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB281321B20607D001F2FEF /* TSOBroker.m */; };
+		8EB281361B20737E001F2FEF /* TSOWalletTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB281351B20737E001F2FEF /* TSOWalletTest.m */; };
+		8EB281391B20AE09001F2FEF /* TSOWallet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB281381B20AE09001F2FEF /* TSOWallet.m */; };
+		8EB2813A1B20AE09001F2FEF /* TSOWallet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB281381B20AE09001F2FEF /* TSOWallet.m */; };
+		8EB2813D1B21ACA2001F2FEF /* TSOWalletTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB2813C1B21ACA2001F2FEF /* TSOWalletTableViewController.m */; };
+		8EB2813E1B21ACAA001F2FEF /* TSOWalletTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB2813C1B21ACA2001F2FEF /* TSOWalletTableViewController.m */; };
+		8EB281421B21ACE4001F2FEF /* TSOControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB281411B21ACE4001F2FEF /* TSOControllerTest.m */; };
+		8EB281451B21B356001F2FEF /* TSONotificationCenterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB281441B21B356001F2FEF /* TSONotificationCenterTest.m */; };
+		8EB281481B21B5A2001F2FEF /* TSOFakeNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB281471B21B5A2001F2FEF /* TSOFakeNotificationCenter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E0FBA0C1B2220D800330EED /* TSONetworkTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSONetworkTest.m; sourceTree = "<group>"; };
 		8E1CBA561B1CF3C0001052F2 /* Wallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E1CBA5A1B1CF3C0001052F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E1CBA5B1B1CF3C0001052F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -44,6 +57,18 @@
 		8E1CBA8C1B1D06E1001052F2 /* TSOMoney.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSOMoney.h; sourceTree = "<group>"; };
 		8E1CBA8D1B1D06E1001052F2 /* TSOMoney.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSOMoney.m; sourceTree = "<group>"; };
 		8E1CBA951B1D0B22001052F2 /* TSOMoneyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSOMoneyTest.m; sourceTree = "<group>"; };
+		8EB2812F1B205F76001F2FEF /* TSOBrokerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSOBrokerTest.m; sourceTree = "<group>"; };
+		8EB281311B20607D001F2FEF /* TSOBroker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSOBroker.h; sourceTree = "<group>"; };
+		8EB281321B20607D001F2FEF /* TSOBroker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSOBroker.m; sourceTree = "<group>"; };
+		8EB281351B20737E001F2FEF /* TSOWalletTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSOWalletTest.m; sourceTree = "<group>"; };
+		8EB281371B20AE09001F2FEF /* TSOWallet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSOWallet.h; sourceTree = "<group>"; };
+		8EB281381B20AE09001F2FEF /* TSOWallet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSOWallet.m; sourceTree = "<group>"; };
+		8EB2813B1B21ACA2001F2FEF /* TSOWalletTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSOWalletTableViewController.h; sourceTree = "<group>"; };
+		8EB2813C1B21ACA2001F2FEF /* TSOWalletTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSOWalletTableViewController.m; sourceTree = "<group>"; };
+		8EB281411B21ACE4001F2FEF /* TSOControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSOControllerTest.m; sourceTree = "<group>"; };
+		8EB281441B21B356001F2FEF /* TSONotificationCenterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSONotificationCenterTest.m; sourceTree = "<group>"; };
+		8EB281461B21B5A2001F2FEF /* TSOFakeNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSOFakeNotificationCenter.h; sourceTree = "<group>"; };
+		8EB281471B21B5A2001F2FEF /* TSOFakeNotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSOFakeNotificationCenter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E0FBA0E1B2220E400330EED /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8E0FBA0C1B2220D800330EED /* TSONetworkTest.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
 		8E1CBA4D1B1CF3C0001052F2 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +121,8 @@
 				8E1CBA841B1CF688001052F2 /* Models */,
 				8E1CBA5D1B1CF3C0001052F2 /* AppDelegate.h */,
 				8E1CBA5E1B1CF3C0001052F2 /* AppDelegate.m */,
+				8EB2813B1B21ACA2001F2FEF /* TSOWalletTableViewController.h */,
+				8EB2813C1B21ACA2001F2FEF /* TSOWalletTableViewController.m */,
 				8E1CBA601B1CF3C0001052F2 /* ViewController.h */,
 				8E1CBA611B1CF3C0001052F2 /* ViewController.m */,
 				8E1CBA631B1CF3C0001052F2 /* Main.storyboard */,
@@ -110,7 +145,10 @@
 		8E1CBA721B1CF3C0001052F2 /* WalletTests */ = {
 			isa = PBXGroup;
 			children = (
-				8E1CBA951B1D0B22001052F2 /* TSOMoneyTest.m */,
+				8E0FBA0E1B2220E400330EED /* Network */,
+				8EB281431B21B332001F2FEF /* Singletons */,
+				8EB2813F1B21ACB4001F2FEF /* Controllers */,
+				8EB281401B21ACC9001F2FEF /* Models */,
 				8E1CBA731B1CF3C0001052F2 /* Supporting Files */,
 			);
 			path = WalletTests;
@@ -129,8 +167,40 @@
 			children = (
 				8E1CBA8C1B1D06E1001052F2 /* TSOMoney.h */,
 				8E1CBA8D1B1D06E1001052F2 /* TSOMoney.m */,
+				8EB281311B20607D001F2FEF /* TSOBroker.h */,
+				8EB281321B20607D001F2FEF /* TSOBroker.m */,
+				8EB281371B20AE09001F2FEF /* TSOWallet.h */,
+				8EB281381B20AE09001F2FEF /* TSOWallet.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		8EB2813F1B21ACB4001F2FEF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8EB281411B21ACE4001F2FEF /* TSOControllerTest.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		8EB281401B21ACC9001F2FEF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8E1CBA951B1D0B22001052F2 /* TSOMoneyTest.m */,
+				8EB2812F1B205F76001F2FEF /* TSOBrokerTest.m */,
+				8EB281351B20737E001F2FEF /* TSOWalletTest.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		8EB281431B21B332001F2FEF /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+				8EB281441B21B356001F2FEF /* TSONotificationCenterTest.m */,
+				8EB281461B21B5A2001F2FEF /* TSOFakeNotificationCenter.h */,
+				8EB281471B21B5A2001F2FEF /* TSOFakeNotificationCenter.m */,
+			);
+			name = Singletons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,8 +303,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EB281331B20607D001F2FEF /* TSOBroker.m in Sources */,
 				8E1CBA621B1CF3C0001052F2 /* ViewController.m in Sources */,
 				8E1CBA8E1B1D06E1001052F2 /* TSOMoney.m in Sources */,
+				8EB281391B20AE09001F2FEF /* TSOWallet.m in Sources */,
+				8EB2813D1B21ACA2001F2FEF /* TSOWalletTableViewController.m in Sources */,
 				8E1CBA5F1B1CF3C0001052F2 /* AppDelegate.m in Sources */,
 				8E1CBA5C1B1CF3C0001052F2 /* main.m in Sources */,
 			);
@@ -244,7 +317,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EB281421B21ACE4001F2FEF /* TSOControllerTest.m in Sources */,
+				8EB281301B205F76001F2FEF /* TSOBrokerTest.m in Sources */,
+				8EB281341B20607D001F2FEF /* TSOBroker.m in Sources */,
+				8EB281481B21B5A2001F2FEF /* TSOFakeNotificationCenter.m in Sources */,
 				8E1CBA961B1D0B22001052F2 /* TSOMoneyTest.m in Sources */,
+				8E0FBA0D1B2220D800330EED /* TSONetworkTest.m in Sources */,
+				8EB281451B21B356001F2FEF /* TSONotificationCenterTest.m in Sources */,
+				8EB2813A1B20AE09001F2FEF /* TSOWallet.m in Sources */,
+				8EB2813E1B21ACAA001F2FEF /* TSOWalletTableViewController.m in Sources */,
+				8EB281361B20737E001F2FEF /* TSOWalletTest.m in Sources */,
 				8E1CBA8F1B1D06E1001052F2 /* TSOMoney.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

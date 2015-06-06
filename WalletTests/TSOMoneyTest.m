@@ -58,6 +58,13 @@
     
 }
 
+-(void) testSimpleAddition{
+    
+    TSOMoney *sum = [[TSOMoney dollarWithAmount:5] plus:[TSOMoney dollarWithAmount:5]];
+    XCTAssertEqualObjects(sum, [TSOMoney dollarWithAmount:10], @"$5 + $5 = $,10");
+    
+}
+
 -(void) testEquality{
     
     TSOMoney *five = [TSOMoney euroWithAmount:5];
@@ -90,8 +97,22 @@
     XCTAssertEqual([c hash], [d hash], @"Equal objects must hace same hash");
 }
 
+-(void) testThatHashIsAmount{
+    
+    TSOMoney *one = [TSOMoney euroWithAmount:1];
+    
+    XCTAssertEqual([one hash], 1, @"The hash must be the same as the amount");
+    
+}
 
-
+-(void) testDescription{
+    
+    TSOMoney *one = [TSOMoney dollarWithAmount:1];
+    NSString *desc = @"<TSOMoney: USD 1>";
+    
+    XCTAssertEqualObjects(desc, [one description], @"Description must match template");
+    
+}
 
 
 

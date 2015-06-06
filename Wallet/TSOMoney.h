@@ -7,18 +7,35 @@
 //
 
 #import <Foundation/Foundation.h>
+@class TSOMoney;
+@class TSOBroker;
 
-@interface TSOMoney : NSObject
+@protocol TSOMoney <NSObject>
 
-@property (copy, readonly) NSString *currency;
-
-+(instancetype) dollarWithAmount:(NSUInteger) amount;
-+(instancetype) euroWithAmount:(NSUInteger) amount;
 
 -(id) initWithAmount:(NSUInteger) amount
             currency:(NSString *) currency;
 
--(TSOMoney *) times:(NSUInteger) multiplier;
+-(id<TSOMoney>) times:(NSUInteger) multiplier;
+
+-(id<TSOMoney>) plus:(TSOMoney *) other;
+
+-(TSOMoney *) reduceToCurrency:(NSString *) currency withBroker:(TSOBroker *) broker;
+
+
+@end
+
+
+
+@interface TSOMoney : NSObject<TSOMoney>
+
+@property (strong, nonatomic, readonly) NSNumber *amount;
+@property (copy, readonly) NSString *currency;
+
+
++(instancetype) dollarWithAmount:(NSUInteger) amount;
++(instancetype) euroWithAmount:(NSUInteger) amount;
+
 
 
 
