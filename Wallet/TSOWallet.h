@@ -16,4 +16,6 @@
 
 -(void) subscribeToMemoryWarning:(NSNotificationCenter *) nc;
 
+-(NSUInteger) countOfDifferentCurrencies;
+
 @end

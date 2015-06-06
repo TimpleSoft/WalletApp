@@ -10,14 +10,20 @@
 
 @interface TSOWallet ()
 
-@property (nonatomic, strong) NSMutableArray *moneys;
+@property (nonatomic, strong) NSMutableDictionary *dictMoneys;
 
 @end
 
 @implementation TSOWallet
 
 -(NSUInteger)count{
-    return [self.moneys count];
+    
+    NSUInteger count = 0;
+    
+    for (NSString *currency in self.dictMoneys) {
+        count += [[self.dictMoneys objectForKey:currency] count];
+    }
+    return count;
 }
 
 -(id) initWithAmount:(NSUInteger)amount currency:(NSString *)currency{
@@ -25,7 +31,8 @@
     if (self = [super init]) {
         
         TSOMoney *money = [[TSOMoney alloc] initWithAmount:amount currency:currency];
-        _moneys = [NSMutableArray arrayWithObject:money];
+        NSMutableArray *moneys = [NSMutableArray arrayWithObject:money];
+        _dictMoneys = [NSMutableDictionary dictionaryWithObject:moneys forKey:currency];
         
     }
     
@@ -34,23 +41,40 @@
 
 -(id<TSOMoney>) plus:(TSOMoney *)other{
     
-    [self.moneys addObject:other];
+    // Comprobamos si tenemos algún money de esta divisa, si no añadimos un nuevo par clave-valor
+    if ([self.dictMoneys objectForKey:other.currency]) {
+        
+        [[self.dictMoneys objectForKey:other.currency] addObject:other];
+    
+    }else{
+        
+        [self.dictMoneys setObject:[NSMutableArray arrayWithObject:other] forKey:other.currency];
+        
+    }
+    
     return self;
     
 }
 
 -(id<TSOMoney>) times:(NSUInteger)multiplier{
     
-    NSMutableArray *newMoneys = [NSMutableArray arrayWithCapacity:self.moneys.count];
-    
-    for (TSOMoney *each in self.moneys) {
+    // Vamos sustituyendo los arrays de las divisas con nuevos arrays con el dinero multiplicado
+
+    for (NSString *currency in self.dictMoneys) {
         
-        TSOMoney *newMoney = [each times:multiplier];
-        [newMoneys addObject:newMoney];
+        NSMutableArray *newMoneys = [@[] mutableCopy];
+        
+        for (TSOMoney *each in [self.dictMoneys objectForKey:currency]) {
+            
+            TSOMoney *newMoney = [each times:multiplier];
+            [newMoneys addObject:newMoney];
+            
+        }
+        
+        [self.dictMoneys setObject:newMoneys forKey:currency];
         
     }
     
-    self.moneys = newMoneys;
     return self;
 }
 
@@ -59,13 +83,24 @@
     
     TSOMoney *result = [[TSOMoney alloc] initWithAmount:0 currency:currency];
     
-    for (TSOMoney *money in self.moneys) {
+    for (NSString *currencyKey in self.dictMoneys) {
         
-        result = [[money reduceToCurrency:currency withBroker:broker] plus:result];
-        
+        for (TSOMoney *money in [self.dictMoneys objectForKey:currencyKey]) {
+            
+            result = [[money reduceToCurrency:currency withBroker:broker] plus:result];
+            
+        }
     }
     
     return result;
+    
+}
+
+
+// Devuelve el número de divisas distintas que contiene la cartera
+-(NSUInteger) countOfDifferentCurrencies{
+    
+    return [self.dictMoneys count];
     
 }
 

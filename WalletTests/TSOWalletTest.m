@@ -44,4 +44,18 @@
 }
 
 
+-(void) testNumberOfDifferentCurrencies{
+    
+    TSOWallet *wallet = [[TSOWallet alloc] initWithAmount:10 currency:@"EUR"];
+    
+    XCTAssertEqual([wallet countOfDifferentCurrencies], 1);
+    
+    [wallet plus:[TSOMoney dollarWithAmount:20]];
+    [wallet plus:[TSOMoney dollarWithAmount:20]];
+    
+    XCTAssertEqual([wallet countOfDifferentCurrencies], 2);
+    
+}
+
+
 @end
