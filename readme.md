@@ -2,7 +2,7 @@
 
 **Alumno:** Julio Martínez Ballester
 
-**Fecha de entrega:** 16-06-2015
+**Fecha de entrega:** 07-06-2015
 
 ## Wallet
 Aplicación para representar en una tabla dinero en diferentes divisas y la suma total en €. Desarrollada para poner en práctica los conecptos adquiridos en el curso de TDD.
