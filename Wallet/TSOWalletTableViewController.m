@@ -66,7 +66,7 @@
             cell.textLabel.text = [NSString stringWithFormat:@"Subtotal: %ld", [self.model amountForSection:indexPath.section]];
         }else{
             // CELDA NORMAL
-            TSOMoney *money = [self.model moneyAtIndexPath:indexPath];
+            TSOMoney *money = [self.model takeMoneyAtIndexPath:indexPath];
             cell.textLabel.text = [NSString stringWithFormat:@"%@ - %@", money.amount, money.currency];
         }
         

@@ -33,31 +33,23 @@
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
+    
+    self.wallet = nil;
+    self.walletVC = nil;
+    
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
-}
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
-}
 
 -(void) testThatTableHasNumberOfCurrenciesSectionsPlusOne{
     
     NSUInteger sections = [self.walletVC numberOfSectionsInTableView:nil];
-    XCTAssertEqual(sections, 3);
+    XCTAssertEqual(sections, 3, @"Number of sections must be number of different currencies plus 1");
     
 }
 
 -(void) testThatNumberOfCellsIsNumberOfMoneyPlusOne{
     
     XCTAssertEqual(3, [self.walletVC tableView:nil numberOfRowsInSection:0], @"Number of cells is the number of moneys plus 1 (the total)");
-    
     XCTAssertEqual(2, [self.walletVC tableView:nil numberOfRowsInSection:1], @"Number of cells is the number of moneys plus 1 (the total)");
     
 }

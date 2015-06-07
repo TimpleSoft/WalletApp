@@ -149,7 +149,7 @@
 }
 
 
--(TSOMoney *) moneyAtIndexPath:(NSIndexPath *)indexPath{
+-(TSOMoney *) takeMoneyAtIndexPath:(NSIndexPath *)indexPath{
     
     NSUInteger __block count = 0;
     TSOMoney __block *result;

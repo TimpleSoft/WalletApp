@@ -69,7 +69,7 @@
 }
 
 
--(void) testMoneyAtIndexPath{
+-(void) testTakeMoneyAtIndexPath{
     
     [self.wallet plus:[TSOMoney dollarWithAmount:30]];
     [self.wallet plus:[TSOMoney dollarWithAmount:20]];
@@ -77,8 +77,8 @@
     TSOMoney *dollars = [TSOMoney dollarWithAmount:20];
     TSOMoney *euros = [TSOMoney euroWithAmount:10];
     
-    XCTAssertEqualObjects(dollars, [self.wallet moneyAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:1]]);
-    XCTAssertEqualObjects(euros, [self.wallet moneyAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]]);
+    XCTAssertEqualObjects(dollars, [self.wallet takeMoneyAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:1]]);
+    XCTAssertEqualObjects(euros, [self.wallet takeMoneyAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]]);
     
 }
 

@@ -22,7 +22,7 @@
 -(NSUInteger) countForSection:(NSUInteger) section;
 -(NSUInteger) amountForSection:(NSUInteger) section;
 
--(TSOMoney *) moneyAtIndexPath:(NSIndexPath *) indexPath;
+-(TSOMoney *) takeMoneyAtIndexPath:(NSIndexPath *) indexPath;
 
 
 @end
